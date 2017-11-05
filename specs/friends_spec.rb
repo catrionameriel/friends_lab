@@ -65,6 +65,7 @@ class TestFriends < MiniTest::Test
   end
 
   # 1. For a given person, return their name
+
   def test_getting_name
     result = get_name(@person5)
     assert_equal("Dave", result)
@@ -72,23 +73,24 @@ class TestFriends < MiniTest::Test
 
   # 2. For a given person, return their favourite tv show
   # (e.g. for @person2, function should return the string "Baywatch")
-def test_favourite_tv_show
-  result = get_tv_show(@person1)
-  assert_equal("Friends", result)
-end
+
+  def test_favourite_tv_show
+    result = get_tv_show(@person1)
+    assert_equal("Friends", result)
+  end
 
   # 3. For a given person, check if they like a particular food
   # (e.g. function should return true for @person3 when checked for "stew", false for "spinach")
 
-def test_like_food
-  result = like_food(@person2, "soup")
-  assert_equal(true, result)
-end
-#
-def test_like_food
-  result = like_food(@person2, "sandwiches")
-  assert_equal(false, result)
-end
+  def test_like_food
+    result = like_food(@person2, "soup")
+    assert_equal(true, result)
+  end
+
+  def test_like_food
+    result = like_food(@person2, "sandwiches")
+    assert_equal(false, result)
+  end
 
   # 4. For a given person, add a new name to their list of friends
   # (hint: Add a new string to the friends array, then test for the length of the array, not the return value of your add_friend method)
@@ -110,14 +112,19 @@ end
   # 6. Find the total of everyone's money
   # (hint: use the people array)
 
-def test_money_count
-  result = money_count(@people)
-  assert_equal(143, result)
-end
+  def test_money_count
+    result = money_count(@people)
+    assert_equal(143, result)
+  end
 
   # 7. For two given people, allow the first person to loan a given value of money to the other
   # (hint: you need to pass in the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed)
+
+  def test_lend_money
+    result = lend_money(@person1, @person5, 10)
+    assert_equal(11, result)
+  end
 
 
   # 8. Find the set of everyone's favourite food joined together

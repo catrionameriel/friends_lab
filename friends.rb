@@ -27,8 +27,11 @@ def money_count(group_of_friends)
   total_monies = 0
   for person in group_of_friends
     total_monies += person[:monies]
-
   end
-
   return total_monies
+end
+
+def lend_money(lendee, lender, amount)
+  lender[:monies] -= amount
+  lendee[:monies] += amount
 end
