@@ -50,3 +50,14 @@ def all_favourite_food(group_of_friends)
   end
   return all_food
 end
+
+
+def people_with_no_friends(group_of_people)
+  no_friends = []
+  for person in group_of_people
+    if person[:friends].count == 0
+      no_friends.push(person[:name])
+    end
+  end
+  return no_friends
+end
